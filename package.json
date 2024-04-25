@@ -1,0 +1,57 @@
+{
+  "name": "e-wallet-system",
+  "version": "1.0.0",
+  "description": "This system allow users to fund their account, transfer funds and withdraw from their account.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migrate": "knex migrate:latest",
+    "migrate:reset": "knex migrate:rollback && npm run migrate",
+    "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js jest --coverage --testPathPattern=tests --testTimeout=10000 --runInBand --detectOpenHandles --forceExit",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devwalex/e-wallet-system.git"
+  },
+  "keywords": [],
+  "author": "Usman Salami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devwalex/e-wallet-system/issues"
+  },
+  "homepage": "https://github.com/devwalex/e-wallet-system#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "helmet": "^3.21.2",
+    "http-status": "^1.4.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.3",
+    "knex-paginate": "^3.0.1",
+    "mysql2": "^3.2.0",
+    "randomstring": "^1.2.2",
+    "url-parse": "^1.5.10",
+    "validator": "^13.0.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.20.0",
+    "cross-env": "^7.0.3",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
