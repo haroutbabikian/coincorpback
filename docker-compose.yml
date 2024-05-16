@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   db:
     image: mysql:8.0
@@ -25,10 +25,10 @@ services:
       - HOST=localhost
       - APP_URL=http://localhost:3000
       - NODE_ENV=development
-      - DB_NAME=e_wallet_system
-      - DB_USER=root
-      - DB_PASSWORD_FILE=/run/secrets/db-password
-      - DB_HOST=db
+      - DB_NAME=bank
+      - DB_USER=admin
+      - DB_PASSWORD_FILE=sircumsalot12343
+      - DB_HOST=database-1.cjo2iiegkzn2.eu-central-1.rds.amazonaws.com
       - DB_PORT=3306
     env_file:
       - api.env
