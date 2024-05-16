@@ -8,7 +8,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=e_wallet_system
+      - MYSQL_DATABASE=bank
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
     networks:
       - app-network
@@ -23,8 +23,8 @@ services:
     environment:
       - PORT=3000
       - HOST=localhost
-      - APP_URL=http://localhost:3000
-      - NODE_ENV=development
+      - APP_URL=https://coincorpback.onrender.com
+      - NODE_ENV=production
       - DB_NAME=bank
       - DB_USER=admin
       - DB_PASSWORD_FILE=sircumsalot12343
